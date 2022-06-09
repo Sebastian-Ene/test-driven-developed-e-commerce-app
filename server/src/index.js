@@ -1,4 +1,4 @@
-import initApp from "./app";
+initApp = require("./app");
 (async () => {
   const app = await initApp();
 
