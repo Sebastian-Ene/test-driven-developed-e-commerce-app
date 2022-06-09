@@ -1,0 +1,9 @@
+---- CREATE FRESH DB ----
+psql -U postgres
+_password_
+\i 'C:\\Licenta\\test-driven-developed-e-commerce-app\\server\\db\\generateDbStruct.sql'
+
+--- INSERT FRESH DATA ---
+psql -U postgres
+_password_
+\i 'C:\\Licenta\\test-driven-developed-e-commerce-app\\server\\db\\seed.sql'
