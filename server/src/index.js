@@ -1,9 +1,11 @@
-initApp = require("./app");
-(async () => {
-  const app = await initApp();
+const app = require("./app");
 
-  app.listen(8000, () => {
-    console.log(`server started at http://localhost:${8000}`);
-    console.log("adfasfsaads");
-  });
-})();
+app.listen(8000, () => {
+  console.log(`
+  -----------------------------------------------
+
+
+  
+  
+  server started at http://localhost:${8000}`);
+});

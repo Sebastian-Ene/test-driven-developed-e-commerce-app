@@ -1,19 +1,16 @@
-express = require("express");
-logger = require("morgan");
-pool = require("./db/dbpool");
-productsRouter = require("./routes/product.js");
+const express = require("express");
+const logger = require("morgan");
+const productsRouter = require("./routes/productRouter.js");
 
-module.exports = async function initApp() {
-  const app = express();
+const app = express();
 
-  app.use(logger("dev"));
-  app.use(express.json());
-  app.use(express.urlencoded({ extended: false }));
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-  app.use("/api/products", productsRouter);
-  app.get("/", (req, res) => {
-    res.send("<h1>Hello world!</h1>");
-  });
+app.use("/api/products", productsRouter);
+app.get("/", (req, res) => {
+  res.send("<h1>Hello world!</h1>");
+});
 
-  return app;
-};
+module.exports = app;
