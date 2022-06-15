@@ -15,8 +15,8 @@ CREATE TABLE users (
     last_login TIMESTAMP DEFAULT current_timestamp
 );
 
-CREATE TABLE products (
-    product_id serial PRIMARY KEY,
+CREATE TABLE courses (
+    course_id serial PRIMARY KEY,
     name VARCHAR( 255 ) UNIQUE NOT NULL,
     description VARCHAR ( 1000 ) NOT NULL,
     price NUMERIC NOT NULL,
@@ -28,11 +28,11 @@ CREATE TABLE products (
 CREATE TABLE orders (
     order_id serial PRIMARY KEY,
     user_id INT NOT NULL,
-    product_id INT NOT NULL,
+    course_id INT NOT NULL,
     payment_completed BOOLEAN NOT NULL DEFAULT false,
     completed_date TIMESTAMP DEFAULT current_timestamp,
-    FOREIGN KEY (product_id)
-      REFERENCES products (product_id),
+    FOREIGN KEY (course_id)
+      REFERENCES courses (course_id),
     FOREIGN KEY (user_id)
       REFERENCES users (user_id)
 );

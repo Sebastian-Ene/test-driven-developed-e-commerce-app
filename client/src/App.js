@@ -1,29 +1,20 @@
-import "./App.css";
+import "./App.scss";
 import * as React from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import Landing from "./pages/Landing";
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import CoursesPage from "./pages/CoursesPage";
+import CoursePage from "./pages/CoursePage";
+import SignInPage from "./pages/SignInPage";
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="about" element={<About />} />
-    </Routes>
-  );
-}
-
-function About() {
-  return (
-    <>
-      <main>
-        <h2>Who are we?</h2>
-        <p>That feels like an existential question, don't you think?</p>
-      </main>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-    </>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/course/:id" element={<CoursePage />} />
+            <Route path="/profile" element={<SignInPage />} />
+        </Routes>
+    );
 }
 
 export default App;

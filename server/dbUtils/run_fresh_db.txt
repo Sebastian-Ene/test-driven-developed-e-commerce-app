@@ -3,9 +3,9 @@
 psql -d postgres -U api 
 _password_
 --- execute sql script ---
-\i 'C:\\Licenta\\test-driven-developed-e-commerce-app\\server\\db\\generateDbStruct.sql'
+\i 'C:\\Licenta\\test-driven-developed-e-commerce-app\\server\\dbUtils\\generateDbStruct.sql'
 
 --- INSERT FRESH DATA ---
 psql -d postgres -U api
 _password_
-\i 'C:\\Licenta\\test-driven-developed-e-commerce-app\\server\\db\\seed.sql'
+\i 'C:\\Licenta\\test-driven-developed-e-commerce-app\\server\\dbUtils\\seed.sql'
