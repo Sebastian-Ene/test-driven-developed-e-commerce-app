@@ -7,6 +7,7 @@ export default function Footer() {
             <div className="left">Programus</div>
             <div className="center">Parte a proiectului de diploma</div>
             <div className="right">Bucuresti 2022</div>
+            <div className="separator" />
         </div>
     );
 }

@@ -1,7 +1,9 @@
 import React from "react";
+
+import "../style/signinpage.scss";
+
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import "../style/signinpage.scss";
 
 export default function SignInPage() {
     return (

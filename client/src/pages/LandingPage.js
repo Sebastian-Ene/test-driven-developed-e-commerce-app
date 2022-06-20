@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../style/landingpage.scss";
+import ceva from "../assets/ceva.jpg";
 
 export default function Landing() {
     return (
@@ -20,11 +21,15 @@ export default function Landing() {
                             </div>
                         </div>
                         <div className="right">
-                            <img className="right-img" alt="" src=""></img>
+                            <img className="right-img" alt="" src={ceva}></img>
                         </div>
                     </div>
-                    <div className="landing-section-2">
-                        <div className="courses-descr">
+                    <div
+                        className="landing-section-2"
+                        style={{ backgroundImage: `url(${ceva})` }}
+                    >
+                        <div className="shadow" />
+                        <p className="courses-descr">
                             Cursurile programus fac casjfhajf adfjhsaj
                             hfajkshfjkas fjashf jashf jah fjhsa jfhsajhfs
                             jafjsha jsfhajf hhafs jfhlj gdnilalejwij iw ie iagi
@@ -32,7 +37,7 @@ export default function Landing() {
                             fhiadshf sdiofis adifdsih i hdsafih asih fadsi
                             fhioadsih fdasioh fiohsf ihsah iashdf hsi fsaif
                             asiofioh asihfasio fiosahioafh
-                        </div>
+                        </p>
                         <div className="action-call">
                             <Link to="/courses">Vezi toate cursurile &gt;</Link>
                         </div>

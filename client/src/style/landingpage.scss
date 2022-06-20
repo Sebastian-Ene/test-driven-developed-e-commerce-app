@@ -1,0 +1,87 @@
+@media screen and (min-width: 1366px) {
+    .landing-wrapper {
+        margin-top: 72px;
+        .landing-section-1 {
+            width: 1084px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: [start] 532px [col1] 440px [end];
+            column-gap: 112px;
+            grid-template-rows: 175px;
+            .left {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                .title {
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 30px;
+                    color: #3c4f65;
+                    margin: 0;
+                    margin-bottom: 20px;
+                }
+                .description {
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: #b5bdc6;
+                    margin: 0;
+                }
+            }
+            .right {
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 7px;
+                }
+            }
+        }
+        .landing-section-2 {
+            width: 100%;
+            height: 430px;
+            margin-top: 72px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            .shadow {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #161616;
+                opacity: 0.3;
+                z-index: 0;
+            }
+            .courses-descr,
+            .action-call {
+                width: 1084px;
+                margin: auto;
+                position: relative;
+            }
+            .courses-descr {
+                font-size: 18px;
+                line-height: 28px;
+                color: #e8e8e8;
+
+                margin-bottom: 36px;
+            }
+            .action-call {
+                margin-top: 0;
+                font-size: 20px;
+                line-height: 28px;
+                a {
+                    color: #e8e8e8;
+                    text-decoration: none;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

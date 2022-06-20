@@ -1,6 +1,7 @@
 const express = require("express");
 const logger = require("morgan");
 const coursesRouter = require("./routes/courseRouter.js");
+const userRouter = require("./routes/userRouter.js");
 const cors = require("cors");
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/courses", coursesRouter);
+app.use("/api/user", userRouter);
 app.get("/", (req, res) => {
     res.send("<h1>Hello world!</h1>");
 });

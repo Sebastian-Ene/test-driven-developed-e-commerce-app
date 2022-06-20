@@ -12,7 +12,7 @@ export default function CoursePage() {
         axios
             .get(`http://localhost:8000/api/courses/${pathId}`)
             .then((resp) => {
-                console.log(resp.data.data.course);
+                console.log(resp.data.data);
                 setCourse(resp.data.data.course);
             })
             .catch((err) => {
@@ -24,25 +24,28 @@ export default function CoursePage() {
     //     console.log(course);
     // }, [course]);
     return (
-        <main>
-            <Header />
-            <div className="course-wrapper">
-                <div className="course-section-1">
-                    <div className="left">
-                        <div className="course-name">{course.name}</div>
-                        <div className="course-descr">{course.description}</div>
-                        <div className="course-buy">
-                            {/* TODO: where does the buy button get us? */}
+        course && (
+            <main>
+                <Header />
+                <div className="course-wrapper">
+                    <div className="course-section-1">
+                        <div className="left">
+                            <div className="course-name">{course.name}</div>
+                            <div className="course-descr">
+                                {course.description}
+                            </div>
+                            <div className="course-buy">
+                                {/* TODO: where does the buy button get us? */}
+                            </div>
+                        </div>
+                        <div className="right">
+                            <img src="" alt="" />
                         </div>
                     </div>
-                    <div className="right">
-                        <img src="" alt="" />
-                    </div>
+                    {/* TODO: what other sections and what data do we need here? */}
                 </div>
-                {/* TODO: what other sections and what data do we need here? */}
-            </div>
-            <div>CoursePage{pathId}</div>
-            <Footer />
-        </main>
+                <Footer />
+            </main>
+        )
     );
 }
