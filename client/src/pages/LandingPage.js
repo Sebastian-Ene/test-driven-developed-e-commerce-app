@@ -16,8 +16,12 @@ export default function Landing() {
                                 Bine ati venit la Programus
                             </div>
                             <div className="description">
-                                Programus este o pagina care face ceva tare cu
-                                cursuri nuj vere sa moara nasa
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Itaque praesentium commodi
+                                provident atque numquam delectus nostrum
+                                voluptas officia tempora, officiis laudantium
+                                voluptatibus nihil velit eum, porro et sequi.
+                                Natus, fuga.
                             </div>
                         </div>
                         <div className="right">
@@ -30,13 +34,12 @@ export default function Landing() {
                     >
                         <div className="shadow" />
                         <p className="courses-descr">
-                            Cursurile programus fac casjfhajf adfjhsaj
-                            hfajkshfjkas fjashf jashf jah fjhsa jfhsajhfs
-                            jafjsha jsfhajf hhafs jfhlj gdnilalejwij iw ie iagi
-                            i jf dsaf sabf jksdah jfsaf shf idsaisfd ai fasi
-                            fhiadshf sdiofis adifdsih i hdsafih asih fadsi
-                            fhioadsih fdasioh fiohsf ihsah iashdf hsi fsaif
-                            asiofioh asihfasio fiosahioafh
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Magnam eveniet aspernatur iure harum nemo
+                            delectus. Quis sed illo est veritatis, recusandae
+                            hic molestiae distinctio dolores pariatur delectus
+                            neque nobis maxime sint temporibus repellendus aut
+                            minima dolore! Obcaecati ut dolorum ipsam.
                         </p>
                         <div className="action-call">
                             <Link to="/courses">Vezi toate cursurile &gt;</Link>
@@ -44,14 +47,15 @@ export default function Landing() {
                     </div>
                     <div className="landing-section-3">
                         <div className="left">
-                            <img className="left-img" alt="" src=""></img>
+                            <img className="left-img" alt="" src={ceva}></img>
                         </div>
                         <div className="right">
                             <div className="description">
-                                Inceputurile sunt grele la angajatori place sa
-                                faci cursuri sloaboaze dastea descriere ce sa
-                                mai lux cumpara dracu un curs si lasa ma in
-                                [pace cat sa te nai conving ca am obosit]
+                                Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Alias eum illum, ab placeat
+                                asperiores dolores officia ad ducimus
+                                accusantium modi distinctio, vitae at ex
+                                possimus fuga dicta quia temporibus quae!
                             </div>
                             <div className="action-call">
                                 <Link to="/courses">

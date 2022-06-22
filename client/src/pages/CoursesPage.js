@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ceva from "../assets/ceva.jpg";
 import CourseCard from "../components/CourseCard";
 import "../style/coursespage.scss";
 
@@ -28,12 +29,20 @@ export default function Courses() {
         <main>
             <Header />
             <div className="courses-wrapper">
-                <div className="courses-descripiton">
-                    Cursurile cele mai bune te ajuta sa devii mai bun si tre sa
-                    cresti mereu ca altfel ce mai faci vere daca nu cresti vezi
-                    ca aia e faza baga acolo sa inveti cu cele mai bune cursuri
-                    te propulseaza mult nici n-ai idee aolo vai de steaua ta
-                    esti pune mana si invata
+                <div
+                    className="courses-descripiton"
+                    style={{ backgroundImage: `url(${ceva})` }}
+                >
+                    <div className="shadow" />
+                    <p className="courses-descr">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Aspernatur sint expedita placeat dignissimos.
+                        Nihil blanditiis fuga sit, odio neque quaerat corporis
+                        praesentium sunt sint. Dolor sit a ipsam. Ut,
+                        distinctio? Et ipsum pariatur veniam, eaque odio ratione
+                        alias! Consectetur repellendus numquam eaque autem odit
+                        deleniti ab odio ex provident? Excepturi?
+                    </p>
                 </div>
                 <div className="courses-cards-wrapper">
                     <div>

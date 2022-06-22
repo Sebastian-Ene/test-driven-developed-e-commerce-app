@@ -1,0 +1,68 @@
+@media screen and (min-width: 1366px) {
+    .course-wrapper {
+        .course-section-1 {
+            width: 1084px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: [start] 532px [col1] 440px [end];
+            column-gap: 112px;
+            grid-template-rows: 175px;
+            padding-bottom: 72px;
+            border-bottom: 2px solid #eaeff5;
+            .left {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                .course-name {
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 30px;
+                    color: #3c4f65;
+                    margin: 0;
+                    margin-bottom: 20px;
+                }
+                .course-descr {
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: #848a92;
+                    margin: 0;
+                }
+                .course-buy {
+                    width: 100%;
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 30px;
+                    margin: 0;
+                    margin-top: 20px;
+                    a {
+                        text-decoration: none;
+                        color: #3c4f65;
+                    }
+                }
+            }
+            .right {
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 7px;
+                }
+            }
+        }
+        .course-section-2 {
+            width: 1084px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            margin: auto;
+            margin-top: 72px;
+            .course-descr {
+                font-size: 18px;
+                line-height: 28px;
+                color: #848a92;
+            }
+        }
+    }
+}

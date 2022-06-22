@@ -4,20 +4,6 @@ const jwt = require("jsonwebtoken");
 const jwtSecret = require("../utils/secrets").jwtSecret;
 const saltRounds = 10;
 
-module.exports.validateRegister = async (req, res, next) => {
-    if (!req.body.name) {
-        res.json({ err: "Missing name" });
-    }
-    if (!req.body.email) {
-        res.json({ err: "Missing email" });
-    }
-    if (!req.body.password) {
-        res.json({ err: "Missing password" });
-    } else {
-        next();
-    }
-};
-
 module.exports.register = async (req, res) => {
     try {
         const user = new User(
@@ -33,11 +19,13 @@ module.exports.register = async (req, res) => {
         // console.log(
         //     `INSERT INTO users(email, password, username) VALUES ('${user.email}', '${user.password}', '${user.name}');`
         // );
-        console.log(user.hash, user.hash.length);
+        //console.log(user.hash, user.hash.length);
         await user.insert();
+        console.log(user);
         accessToken = jwt.sign(
-            { name: user.name, email: user.email },
-            jwtSecret
+            { name: user.name, email: user.email, id: user.id },
+            jwtSecret,
+            { expiresIn: "25m" }
         );
         res.status(201).json({
             email: user.email,
@@ -59,15 +47,27 @@ module.exports.signin = async (req, res) => {
         const user = new User(null, req.body.email, req.body.password, null);
         await user.get();
         const isPassMatch = await bcrypt.compare(user.password, user.hash);
+        //console.log(isPassMatch);
         let accessToken;
         if (isPassMatch) {
             accessToken = jwt.sign(
-                { name: user.name, email: user.email },
-                jwtSecret
+                { name: user.name, email: user.email, id: user.id },
+                jwtSecret,
+                { expiresIn: "25m" }
             );
         }
-        res.json({ isPassMatch, accessToken, admin });
+        res.json({ isPassMatch, accessToken, name: user.name });
     } catch (err) {
         res.status(400).send(err);
+    }
+};
+
+module.exports.orders = async (req, res) => {
+    try {
+        console.log(req.user);
+        const orders = await req.user.getOrders();
+        res.json({ orders });
+    } catch (err) {
+        res.status(400).send();
     }
 };

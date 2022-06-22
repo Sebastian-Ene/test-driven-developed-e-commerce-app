@@ -1,0 +1,38 @@
+@media screen and (min-width: 1366px) {
+    .course-card {
+        width: 1084px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border: 2px solid #eaeff5;
+        border-radius: 7px;
+        margin: 32px;
+        padding: 20px;
+        .course-title {
+            height: 36px;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 30px;
+            color: #3c4f65;
+            margin: 0;
+
+            border-bottom: 2px solid #eaeff5;
+        }
+
+        .course-short-description {
+            color: #848a92;
+            margin: 50px 0;
+        }
+
+        .course-view-btn {
+            font-size: 18px;
+            line-height: 28px;
+            text-align: right;
+            a {
+                color: #3c4f65;
+                text-decoration: none;
+                font-weight: 400;
+            }
+        }
+    }
+}

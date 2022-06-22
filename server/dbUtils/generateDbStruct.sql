@@ -17,7 +17,8 @@ CREATE TABLE users (
 CREATE TABLE courses (
     course_id serial PRIMARY KEY,
     name VARCHAR( 255 ) UNIQUE NOT NULL,
-    description VARCHAR ( 1000 ) NOT NULL,
+    description VARCHAR ( 2000 ) NOT NULL,
+    short_description VARCHAR (300) NOT NULL,
     price NUMERIC NOT NULL,
     image  VARCHAR(1000) NOT NULL,
     is_active BOOLEAN NOT NULL DEFAULT false,

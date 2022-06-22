@@ -1,0 +1,41 @@
+@media screen and (min-width: 1366px) {
+    .courses-wrapper {
+        .courses-descripiton {
+            width: 100%;
+            height: 430px;
+            margin-top: 72px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            .shadow {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #161616;
+                opacity: 0.3;
+                z-index: 0;
+            }
+            .courses-descr {
+                width: 1084px;
+                margin: auto;
+                position: relative;
+                font-size: 18px;
+                line-height: 28px;
+                color: #e8e8e8;
+            }
+        }
+        .courses-cards-wrapper {
+            width: 1084px;
+            margin: 72px auto;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
