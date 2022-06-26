@@ -33,7 +33,7 @@ module.exports.getCourses = async (req, res) => {
             },
         });
     } catch (err) {
-        console.log(err);
+        // console.log(err);
         res.status(404).json({
             status: "failed",
             err: err,

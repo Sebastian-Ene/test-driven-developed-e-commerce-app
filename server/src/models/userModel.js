@@ -47,7 +47,7 @@ module.exports = class User {
                 const adminEntry = await dbpool.query(
                     `SELECT * FROM admins WHERE email='${this.email}'`
                 );
-                console.log("exista admin cu emailul asta?", adminEntry.rows);
+                // console.log("exista admin cu emailul asta?", adminEntry.rows);
                 if (adminEntry.rowCount === 1) {
                     resolve(true);
                 } else resolve(false);

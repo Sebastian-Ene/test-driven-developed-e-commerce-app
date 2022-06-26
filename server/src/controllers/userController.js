@@ -21,7 +21,7 @@ module.exports.register = async (req, res) => {
         // );
         //console.log(user.hash, user.hash.length);
         await user.insert();
-        console.log(user);
+        // console.log(user);
         accessToken = jwt.sign(
             { name: user.name, email: user.email, id: user.id },
             jwtSecret,
@@ -33,7 +33,7 @@ module.exports.register = async (req, res) => {
             accessToken,
         });
     } catch (err) {
-        console.log(err);
+        // console.log(err);
         if (err.detail && err.detail.includes("already exists.")) {
             res.status(409).json({ err: "email already registered" });
         } else {
@@ -64,7 +64,7 @@ module.exports.signin = async (req, res) => {
 
 module.exports.orders = async (req, res) => {
     try {
-        console.log(req.user);
+        // console.log(req.user);
         const orders = await req.user.getOrders();
         res.json({ orders });
     } catch (err) {
