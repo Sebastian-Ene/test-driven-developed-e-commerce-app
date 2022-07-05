@@ -2,13 +2,13 @@
 \c courses
 --- insert users ---
 --- admin ---
-INSERT INTO users (email, password, username) VALUES ('ene.sebastian.2000@gmail.com', '1234', 'Sebi');
+INSERT INTO users (email, password, username) VALUES ('ene.sebastian.2000@gmail.com', '$2b$10$4A3GgYfb71XTsvsyH0A5m.3h9oTcNI2I..Vwmp6O2erCif1A3TE5q', 'Sebi');
 INSERT INTO admins (email) VALUES ('ene.sebastian.2000@gmail.com');
 --- users ---
-INSERT INTO users (email, password, username) VALUES ('enesebi@yahoo.com', '1234', 'Sebi');
-INSERT INTO users (email, password, username) VALUES ('dfsaf@fdsagmail.com', '1234', 'John');
-INSERT INTO users (email, password, username) VALUES ('sfadfsa@fsdfagmail.com', '1234', 'Sett');
-INSERT INTO users (email, password, username) VALUES ('fsadf@dfsagmail.com', '1234', 'Bob');
+INSERT INTO users (email, password, username) VALUES ('enesebi@yahoo.com', '$2b$10$4A3GgYfb71XTsvsyH0A5m.3h9oTcNI2I..Vwmp6O2erCif1A3TE5q', 'Sebi');
+INSERT INTO users (email, password, username) VALUES ('dfsaf@fdsagmail.com', '$2b$10$4A3GgYfb71XTsvsyH0A5m.3h9oTcNI2I..Vwmp6O2erCif1A3TE5q', 'John');
+INSERT INTO users (email, password, username) VALUES ('sfadfsa@fsdfagmail.com', '$2b$10$4A3GgYfb71XTsvsyH0A5m.3h9oTcNI2I..Vwmp6O2erCif1A3TE5q', 'Sett');
+INSERT INTO users (email, password, username) VALUES ('fsadf@dfsagmail.com', '$2b$10$4A3GgYfb71XTsvsyH0A5m.3h9oTcNI2I..Vwmp6O2erCif1A3TE5q', 'Bob');
 
 --- insert courses ---
 

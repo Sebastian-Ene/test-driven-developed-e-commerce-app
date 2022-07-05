@@ -5,6 +5,7 @@ const logger = require("morgan");
 const adminRouter = require("./routes/adminRouter.js");
 const coursesRouter = require("./routes/courseRouter.js");
 const userRouter = require("./routes/userRouter.js");
+const invoiceRouter = require("./routes/invoiceRouter.js");
 const authJWT = require("./utils/auth").authJWT;
 const isAdmin = require("./utils/isAdmin").isAdmin;
 
@@ -22,6 +23,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/admin", authJWT, isAdmin, adminRouter);
 app.use("/api/courses", coursesRouter);
 app.use("/api/user", userRouter);
+app.use("/api/invoice", invoiceRouter);
+
 app.get("/", (req, res) => {
     res.send("<h1>Hello world!</h1>");
 });

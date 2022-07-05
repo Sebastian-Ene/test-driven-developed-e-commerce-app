@@ -5,13 +5,25 @@ module.exports.getCourses = async (req, res) => {
         courses = await dbpool.query(
             `SELECT course_id, name, description, short_description, price, image, is_active FROM courses;`
         );
-        res.json(courses.rows);
+        return res.json(courses.rows);
     } catch (err) {
-        res.status(404).json();
+        return res.status(404).json();
     }
-    res.json({ courses: "ceva" });
+};
+
+module.exports.getOrders = async (req, res) => {
+    try {
+        orders = await dbpool.query(
+            `SELECT * FROM orders join courses using(course_id) join users using(user_id)`
+        );
+        console.log(orders);
+        return res.json(orders.rows);
+    } catch (err) {
+        console.log(err);
+        return res.status(404).json();
+    }
 };
 
 module.exports.putCourses = async (req, res) => {
-    res.json({ courses: "ceva" });
+    return res.json({ courses: "ceva" });
 };

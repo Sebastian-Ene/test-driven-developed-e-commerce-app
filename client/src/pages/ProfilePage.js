@@ -10,11 +10,6 @@ export default function ProfilePage() {
     const [orders, setorders] = useState(null);
     const [isSignedin, setisSignedin] = useState(null);
 
-    function authTokenFunction() {
-        if (localStorage.getItem("authToken"))
-            settoken(localStorage.getItem("authToken"));
-    }
-
     useEffect(() => {
         if (!token) {
             setisSignedin(false);
@@ -33,6 +28,11 @@ export default function ProfilePage() {
                 console.log(err);
             });
     }, [token]);
+
+    function authTokenFunction() {
+        if (localStorage.getItem("authToken"))
+            settoken(localStorage.getItem("authToken"));
+    }
 
     useEffect(() => {
         window.addEventListener("authToken", authTokenFunction);

@@ -1,13 +1,17 @@
 import { React, useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import axios from "axios";
 import "../style/coursepage.scss";
+import SignIn from "../components/SignIn";
 
 export default function CoursePage() {
     const pathId = useParams().id;
     const [course, setCourse] = useState(null);
+    const [payment, setPayment] = useState(null);
+    const [signin, setsignin] = useState(true);
+
     useEffect(() => {
         axios
             .get(`http://localhost:8000/api/courses/${pathId}`)
@@ -20,13 +24,51 @@ export default function CoursePage() {
             });
     }, [pathId]);
 
+    function authTokenFunction() {
+        if (localStorage.getItem("authToken")) setsignin(true);
+    }
+
+    useEffect(() => {
+        window.addEventListener("authToken", authTokenFunction);
+        return () => {
+            window.removeEventListener("authToken", authTokenFunction);
+        };
+    }, []);
+
+    const buy = () => {
+        axios
+            .post(
+                `http://localhost:8000/api/user/order`,
+                {
+                    course_id: pathId,
+                    payment_completed: true,
+                },
+                {
+                    headers: {
+                        Authorization:
+                            "Bearer " + localStorage.getItem("authToken"),
+                    },
+                }
+            )
+            .then((resp) => {
+                console.log(resp.data.data);
+                setPayment(true);
+            })
+            .catch((err) => {
+                console.log(err);
+                setsignin(false);
+            });
+    };
     // useEffect(() => {
     //     console.log(course);
     // }, [course]);
-    return (
+    return !signin ? (
+        <SignIn />
+    ) : (
         course && (
             <main>
                 <Header />
+                {payment && <div>Modal</div>}
                 <div className="course-wrapper">
                     <div className="course-section-1">
                         <div className="left">
@@ -37,7 +79,7 @@ export default function CoursePage() {
                                 {course.short_description}
                             </div>
                             <div className="course-buy">
-                                <Link to="/courses">Cumpara &gt;</Link>
+                                <div onClick={buy}>Cumpara &gt;</div>
                             </div>
                         </div>
                         <div className="right">

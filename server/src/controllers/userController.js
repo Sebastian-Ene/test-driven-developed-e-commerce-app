@@ -1,4 +1,5 @@
 const User = require("../models/userModel");
+const Order = require("../models/orderModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const jwtSecret = require("../utils/secrets").jwtSecret;
@@ -67,6 +68,25 @@ module.exports.orders = async (req, res) => {
         // console.log(req.user);
         const orders = await req.user.getOrders();
         res.json({ orders });
+    } catch (err) {
+        res.status(400).send();
+    }
+};
+
+module.exports.order = async (req, res) => {
+    try {
+        console.log(req.user);
+        console.log(req.body);
+        const order = new Order(
+            req.user.id,
+            req.body.course_id,
+            req.body.payment_completed
+        );
+        console.log(order);
+        await order.createOrder();
+        res.status(201).json({
+            status: "success",
+        });
     } catch (err) {
         res.status(400).send();
     }

@@ -3,6 +3,6 @@ const adminController = require("../controllers/adminController");
 
 const router = express.Router();
 
-router.get("/", adminController.getCourses);
-router.put("/", adminController.putCourses);
+router.get("/courses", adminController.getCourses);
+router.get("/orders", adminController.getOrders);
 module.exports = router;

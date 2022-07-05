@@ -21,10 +21,6 @@ export default function Courses() {
             });
     }, []);
 
-    useEffect(() => {
-        console.log(courses);
-    }, [courses]);
-
     return (
         <main>
             <Header />
